@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="120dp"
+    android:viewportWidth="360"
+    android:viewportHeight="120">
+
+    <!-- Wave pattern background -->
+    <path
+        android:fillColor="#40FFFFFF"
+        android:pathData="M0,60 C90,40 180,80 270,60 C360,40 450,80 540,60 L540,120 L0,120 Z"/>
+    
+    <path
+        android:fillColor="#20FFFFFF"
+        android:pathData="M0,70 C90,50 180,90 270,70 C360,50 450,90 540,70 L540,120 L0,120 Z"/>
+        
+    <!-- Small circles decoration -->
+    <path
+        android:fillColor="#30FFFFFF"
+        android:pathData="M40,80 A10,10 0 1,1 60,80 A10,10 0 1,1 40,80"/>
+        
+    <path
+        android:fillColor="#30FFFFFF"
+        android:pathData="M280,90 A8,8 0 1,1 296,90 A8,8 0 1,1 280,90"/>
+        
+    <path
+        android:fillColor="#30FFFFFF"
+        android:pathData="M160,100 A6,6 0 1,1 172,100 A6,6 0 1,1 160,100"/>
+</vector>
