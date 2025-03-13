@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyApp</string>
+    
+    <!-- Login Screen -->
+    <string name="login_title">Đăng nhập</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Mật khẩu</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="error_invalid_email">Email không hợp lệ</string>
+    <string name="error_invalid_password">Mật khẩu không hợp lệ</string>
+    
+    <!-- Bottom Navigation -->
+    <string name="nav_home">Trang chủ</string>
+    <string name="nav_messages">Tin nhắn</string>
+    <string name="nav_notifications">Thông báo</string>
+    <string name="nav_activities">Hoạt động</string>
+    <string name="nav_contacts">Danh bạ</string>
+    
+    <!-- Common -->
+    <string name="loading">Đang tải...</string>
+    <string name="error_general">Đã có lỗi xảy ra</string>
+    <string name="retry">Thử lại</string>
+</resources>
