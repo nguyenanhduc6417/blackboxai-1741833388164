@@ -2,23 +2,36 @@
 <resources>
     <string name="app_name">MyApp</string>
     
-    <!-- Login Screen -->
-    <string name="login_title">Đăng nhập</string>
-    <string name="hint_email">Email</string>
-    <string name="hint_password">Mật khẩu</string>
-    <string name="btn_login">Đăng nhập</string>
-    <string name="error_invalid_email">Email không hợp lệ</string>
-    <string name="error_invalid_password">Mật khẩu không hợp lệ</string>
-    
     <!-- Bottom Navigation -->
-    <string name="nav_home">Trang chủ</string>
-    <string name="nav_messages">Tin nhắn</string>
-    <string name="nav_notifications">Thông báo</string>
-    <string name="nav_activities">Hoạt động</string>
-    <string name="nav_contacts">Danh bạ</string>
+    <string name="title_home">Home</string>
+    <string name="title_messages">Messages</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activities">Activities</string>
+    <string name="title_contacts">Contacts</string>
+    
+    <!-- Login -->
+    <string name="login_title">Login</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="error_invalid_email">Invalid email address</string>
+    <string name="error_invalid_password">Password must be at least 6 characters</string>
+    <string name="error_login_failed">Login failed. Please try again.</string>
     
     <!-- Common -->
-    <string name="loading">Đang tải...</string>
-    <string name="error_general">Đã có lỗi xảy ra</string>
-    <string name="retry">Thử lại</string>
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_unknown">An unknown error occurred</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="loading">Loading…</string>
+    
+    <!-- Empty States -->
+    <string name="empty_messages">No messages yet</string>
+    <string name="empty_notifications">No notifications</string>
+    <string name="empty_activities">No activities</string>
+    <string name="empty_contacts">No contacts found</string>
+
+    <!-- Actions -->
+    <string name="action_add">Add</string>
 </resources>
