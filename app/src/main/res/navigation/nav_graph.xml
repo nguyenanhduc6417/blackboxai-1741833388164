@@ -7,26 +7,38 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.myapp.ui.home.HomeFragment"
-        android:label="@string/nav_home" />
+        android:label="@string/title_home" />
 
     <fragment
         android:id="@+id/navigation_messages"
         android:name="com.example.myapp.ui.messages.MessagesFragment"
-        android:label="@string/nav_messages" />
+        android:label="@string/title_messages" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.myapp.ui.notifications.NotificationsFragment"
-        android:label="@string/nav_notifications" />
+        android:label="@string/title_notifications" />
 
     <fragment
         android:id="@+id/navigation_activities"
         android:name="com.example.myapp.ui.activities.ActivitiesFragment"
-        android:label="@string/nav_activities" />
+        android:label="@string/title_activities" />
 
     <fragment
         android:id="@+id/navigation_contacts"
         android:name="com.example.myapp.ui.contacts.ContactsFragment"
-        android:label="@string/nav_contacts" />
+        android:label="@string/title_contacts" />
+
+    <!-- Global actions that can be triggered from anywhere -->
+    <action
+        android:id="@+id/action_global_login"
+        app:destination="@id/loginActivity"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.myapp.ui.login.LoginActivity"
+        android:label="@string/login_title" />
 
 </navigation>
