@@ -12,96 +12,60 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/white"
-            app:title="@string/nav_activities"
-            app:titleTextColor="@color/black" />
+            android:background="?attr/colorPrimary"
+            app:title="@string/title_activities"
+            app:titleTextColor="@color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefresh"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:padding="8dp" />
+            android:padding="@dimen/spacing_small" />
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-    <!-- Filter Chip Group -->
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
-        android:background="@color/white"
-        app:singleSelection="true">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipAll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tất cả"
-            android:checked="true"
-            style="@style/Widget.MaterialComponents.Chip.Choice" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipToday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hôm nay"
-            style="@style/Widget.MaterialComponents.Chip.Choice" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipWeek"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tuần này"
-            style="@style/Widget.MaterialComponents.Chip.Choice" />
-
-    </com.google.android.material.chip.ChipGroup>
-
-    <!-- Empty state -->
-    <LinearLayout
-        android:id="@+id/emptyState"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:visibility="gone"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
+        <!-- Empty state -->
         <ImageView
+            android:id="@+id/iv_empty"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:contentDescription="Empty activities"
-            android:src="@drawable/ic_empty_activities" />
+            android:contentDescription="@string/empty_activities"
+            android:src="@drawable/ic_empty_activities"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/tv_empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
+            android:id="@+id/tv_empty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Không có hoạt động nào"
-            android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:text="@string/empty_activities"
+            android:textAppearance="@style/TextAppearance.App.Title"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_empty" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Loading state -->
-    <ProgressBar
-        android:id="@+id/progressBar"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="@string/action_add"
+        app:srcCompat="@drawable/ic_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
