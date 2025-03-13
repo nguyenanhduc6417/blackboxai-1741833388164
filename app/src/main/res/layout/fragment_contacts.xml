@@ -12,95 +12,69 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/white"
-            app:title="@string/nav_contacts"
-            app:titleTextColor="@color/black" />
-
-        <!-- Search Bar -->
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            android:background="?attr/colorPrimary"
+            app:title="@string/title_contacts"
+            app:titleTextColor="@color/white">
 
             <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
-                android:layout_width="match_parent"
+                android:id="@+id/search_view"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:iconifiedByDefault="false"
-                android:queryHint="Tìm kiếm liên hệ" />
+                android:layout_gravity="end"
+                android:theme="@style/ThemeOverlay.MaterialComponents.Light" />
 
-        </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:padding="8dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-    <!-- Fast Scroller -->
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/fastScroller"
-        android:layout_width="32dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="end"
-        android:background="@color/light_gray"
-        android:gravity="center"
-        android:padding="8dp"
-        android:textColor="@color/primary"
-        android:textSize="12sp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-    <!-- Empty state -->
-    <LinearLayout
-        android:id="@+id/emptyState"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:visibility="gone"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="@dimen/spacing_small" />
+
+        <!-- Empty state -->
         <ImageView
+            android:id="@+id/iv_empty"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:contentDescription="Empty contacts"
-            android:src="@drawable/ic_empty_contacts" />
+            android:contentDescription="@string/empty_contacts"
+            android:src="@drawable/ic_empty_contacts"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/tv_empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
+            android:id="@+id/tv_empty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Không có liên hệ nào"
-            android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:text="@string/empty_contacts"
+            android:textAppearance="@style/TextAppearance.App.Title"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_empty" />
 
-    </LinearLayout>
-
-    <!-- Loading state -->
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:visibility="gone"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddContact"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:contentDescription="Add contact"
-        android:src="@drawable/ic_add"
-        app:tint="@color/white" />
+        android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="@string/action_add"
+        app:srcCompat="@drawable/ic_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
